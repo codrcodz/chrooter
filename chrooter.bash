@@ -33,7 +33,7 @@
     # Make sure sftp user can access sub-directory in chroot
       chown ${_username} /home/${_username}/$_vhost
     # Create the persistent bind-mount outside the chroot to the vhost directory
-      echo "${_vhosts_tld}/${_vhost}/home/${_username}/${_vhost} none rw,bind,nobootwait 0 0" >> /etc/fstab
+      echo "${_vhosts_tld}/${_vhost} /home/${_username}/${_vhost} none rw,bind,nobootwait 0 0" >> /etc/fstab
       mount /home/${_username}/${_vhost}
     # Create a list of random passwords for each user; save creds to file
       echo "${_username}:$(openssl rand -base64 12)" >> /root/sftp_user_creds.txt
