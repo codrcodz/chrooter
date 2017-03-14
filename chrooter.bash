@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
+##################################
+#                                #
+#    Creators  Laura McMaster    #
+#              Cody Lee Cochran  #
+#              Wolf              #
+#                                #
+#  Maintainer  Cody Lee Cochran  #
+#                                #
+#     License  MIT               #
+#                                #
+##################################
 
 # Define location of top-level directory of all vhost sub-directories
   _vhosts_tld="/var/www/vhosts";
