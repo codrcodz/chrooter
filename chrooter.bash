@@ -16,7 +16,6 @@
 #
 #  Ensure there are no other sftp users already on this server.
 #  If there are, you may need to modify the script slightly.
-#  Otherwise, the sftp chroot settings in sshd_config may not work right.
 #
 #  Append this to the bottom of /etc/ssh/sshd_config:
 #
