@@ -5,9 +5,12 @@ before_script:
   - sudo easy_install bashtest lftp
   - sudo mkdir -p /var/www/vhosts/{alpha,beta,charlie,delta}.com
   - sudo chmod +x ./chrooter.bash
-  - sudo cat ./tests/sshd_config >> /etc/ssh/sshd_config
+  - sudo sed -i 's/Subsystem/# Subsystem/' /etc/ssh/sshd_config
+  - sudo cat ./test/sshd_config >> /etc/ssh/sshd_config
+  - sudo sshd -t
+  - sudo service sshd reload
 
 script:
-  - bashtest ./tests/username_test.bashtest
-  - bashtest ./tests/ls_test.bashtest
-  - bashtest ./tests/sftp_test.bashtest
+  - bashtest ./test/username_test.bashtest
+  - bashtest ./test/ls_test.bashtest
+  - bashtest ./test/sftp_test.bashtest
